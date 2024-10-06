@@ -1,12 +1,14 @@
-import React from 'react'
-import { LoginContainer } from './styles'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LoginContainer } from './styles';
 
 function Login() {
   return (
     <LoginContainer>
-      Login
+      <h1>Login</h1>
+      <Link to="/">Voltar</Link>
     </LoginContainer>
-  )
+  );
 }
 
-export default Login
+export default Login;

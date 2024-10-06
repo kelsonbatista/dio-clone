@@ -1,10 +1,12 @@
 import React from 'react'
 import { ButtonContainer } from './styles'
 
-function Button() {
+function Button(props) {
+  const { title, variant="primary", onClick } = props
+
   return (
-    <ButtonContainer>
-      Button
+    <ButtonContainer variant={variant} onClick={onClick}>
+      {title}
     </ButtonContainer>
   )
 }

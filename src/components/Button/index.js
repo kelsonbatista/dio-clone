@@ -1,5 +1,5 @@
-import React from 'react'
-import { ButtonContainer } from './styles'
+import React from 'react';
+import { ButtonContainer } from './styles';
 
 function Button(props) {
   const { title, variant="primary", onClick } = props
@@ -11,4 +11,4 @@ function Button(props) {
   )
 }
 
-export default Button
+export default Button;

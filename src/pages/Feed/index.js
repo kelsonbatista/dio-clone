@@ -9,7 +9,7 @@ function Feed() {
 
   return (
     <>
-      <Header />
+      <Header autenticado={true} />
       <FeedContainer>
         <Column flex={3}>
           <Title>Feed</Title>

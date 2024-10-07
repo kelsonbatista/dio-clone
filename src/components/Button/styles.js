@@ -10,7 +10,7 @@ export const ButtonContainer = styled.button`
   width: 100%;
 
   ${(props) => {
-    return props.variant === "primary" && css`
+    return props.$variant === "primary" && css`
       min-width: 167px;
       height: 33px;
       background: #e41050;

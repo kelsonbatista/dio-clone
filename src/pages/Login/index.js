@@ -1,17 +1,20 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import { MdEmail, MdLock } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
 import Input from "../../components/Input";
 import { Column, ForgotText, LoginContainer, RegisterText, Row, SubTitleLogin, Title, TitleLogin, Wrapper } from "./styles";
 
 function Login() {
-  const navigate = useNavigate();
+  const { control, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
 
-  const handleClickLogin = () => {
+  //const navigate = useNavigate();
+
+  /*const handleClickLogin = () => {
     navigate("/feed");
-  };
+  };*/
   
   return (
     <>
@@ -27,17 +30,24 @@ function Login() {
           <Wrapper>
             <TitleLogin>Faça seu cadastro</TitleLogin>
             <SubTitleLogin>Faça seu login e make the change.</SubTitleLogin>
-            <form>
-              <Input placeholder="Email" leftIcon={<MdEmail />} />
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <Input
+                placeholder="Email"
+                leftIcon={<MdEmail />}
+                control={control}
+                name="email"
+                />
               <Input
                 placeholder="Senha"
                 type="password"
                 leftIcon={<MdLock />}
+                control={control}
+                name="password"
               />
               <Button
                 title="Entrar"
-                variant="primary"
-                onClick={handleClickLogin}
+                $variant="primary"
+                type="submit"
               />
             </form>
             <Row>

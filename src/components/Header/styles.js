@@ -32,14 +32,6 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
-export const SearchContainer = styled.div`
-  width: 175px;
-  height: 30px;
-  background: #2D2D37;
-  margin: 0 12px;
-  padding: 2px 5px;
-`;
-
 export const Menu = styled.div`
   font-family: 'Open Sans', sans-serif;
   font-style: normal;
@@ -67,9 +59,23 @@ export const UserAvatar = styled.div`
   border: 2px solid #fff;
 `;
 
+export const SearchContainer = styled.div`
+  width: 175px;
+  height: 30px;
+  background: #2d2d37;
+  border-radius: 8px;
+  padding: 2px 5px;
+  margin: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Input = styled.input`
   flex: 1;
   background: transparent;
   border: 0;
+  border-radius: 8px;
   color: #fff;
+  height: 30px;
 `;

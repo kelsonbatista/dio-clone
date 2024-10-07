@@ -1,24 +1,24 @@
 import React from 'react';
+import logo from '../../assets/images/logo-full.webp';
 import Button from '../Button';
-import { HeaderContainer, Input, Menu, MenuRight, Row, SearchContainer, UserAvatar, Wrapper } from './styles';
+import { HeaderContainer, Input, Menu, MenuRight, Row, SearchContainer, Wrapper } from './styles';
 
 function Header() {
   return (
     <Wrapper>
       <HeaderContainer>
         <Row>
-          <img src="" alt="Logo" />
-          <Button title="Entrar" />
+          <img src={logo} alt="Logo" />
           <SearchContainer>
             <Input placeholder="Search..." />
           </SearchContainer>
-          <Button title="Cadastrar" />
           <Menu>Live Code</Menu>
           <Menu>Global</Menu>
         </Row>
         <Row>
-          <MenuRight>Children</MenuRight>
-          <UserAvatar />
+          <MenuRight>Home</MenuRight>
+          <Button title="Entrar" />
+          <Button title="Cadastrar" />
         </Row>
       </HeaderContainer>
     </Wrapper>

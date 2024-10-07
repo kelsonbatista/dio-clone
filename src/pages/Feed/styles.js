@@ -8,22 +8,26 @@ export const FeedContainer = styled.main`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h3`
   font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
-  width: 320px;
-  margin-bottom: 20px;
-  line-height: 44px;
+  font-size: 18px;
+  line-height: 25px;
   color: #fff;
+  margin-bottom: 24px;
 `;
 
-export const TitleHighlight = styled.span`
-  color: #e4105d;
+export const TitleHighlight = styled.h3`
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  color: #ffffff80;
+  margin-bottom: 24px;
 `;
 
 export const TextContent = styled.p`
@@ -35,4 +39,9 @@ export const TextContent = styled.p`
   margin-bottom: 20px;
   line-height: 22px;
   color: #d9d9d9;
+`;
+
+export const Column = styled.div`
+  flex:${(props) => props.flex};
+  padding-right: 24px;
 `;

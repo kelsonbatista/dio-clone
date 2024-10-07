@@ -1,14 +1,18 @@
 import React from 'react';
 import { FiThumbsUp } from 'react-icons/fi';
-import { CardContainer, Content, HasInfo, ImageBackground, PostInfo, UserInfo, UserPicture } from './styles';
+import avatar from '../../assets/images/avatar.png';
+import fundo1 from '../../assets/images/fundo1.jpg';
+import { CardContainer, Content, HasInfo, ImageBackground, ImageWrapper, PostInfo, UserInfo, UserPicture } from './styles';
 
 function Card() {
   return (
     <CardContainer>
-      <ImageBackground />
+      <ImageWrapper>
+        <ImageBackground src={fundo1} />
+      </ImageWrapper>
       <Content>
         <UserInfo>
-          <UserPicture />
+          <UserPicture src={avatar} />
           <div>
             <h4>Nome do usuário</h4>
             <p>tempo da postagem</p>

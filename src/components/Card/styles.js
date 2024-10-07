@@ -7,9 +7,18 @@ export const CardContainer = styled.div`
   margin-bottom: 24px;
 `;
 
-export const ImageBackground = styled.img`
+export const ImageWrapper = styled.div`
   width: 100%;
   height: 180px;
+  overflow: hidden;
+  display: flex;
+`;
+
+export const ImageBackground = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateY(0);
 `;
 
 export const Content = styled.div`

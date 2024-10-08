@@ -20,7 +20,7 @@ function Feed() {
           <Card />
           <Card />
         </Column>
-        <Column flex={1}>
+        <Column $flex={1}>
           <TitleHighlight># RANKING 5 TOP DA SEMANA</TitleHighlight>
           <UserInfo nome="José da Silva" imagem={avatar} $percentual={50} />
           <UserInfo nome="Maria Ferreira" imagem={avatar} $percentual={80} />

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LoginContainer = styled.main`
+export const RegisterContainer = styled.main`
   width: 100%;
   max-width: 80%;
   margin: 0 auto;
@@ -22,7 +22,7 @@ export const Title = styled.h2`
   color: #fff;
 `;
 
-export const TitleLogin = styled.p`
+export const TitleRegister = styled.p`
   font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -31,7 +31,7 @@ export const TitleLogin = styled.p`
   line-height: 44px;
 `;
 
-export const SubTitleLogin = styled.p`
+export const SubTitleRegister = styled.p`
   font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: 400;

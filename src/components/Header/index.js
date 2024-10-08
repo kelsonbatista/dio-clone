@@ -11,8 +11,8 @@ function Header(props) {
   
   const navigate = useNavigate();
 
-  const handleClickSignup = () => {
-    navigate("/signup");
+  const handleClickRegister = () => {
+    navigate("/register");
   };
 
   const handleClickLogin = () => {
@@ -43,7 +43,7 @@ function Header(props) {
             <>
               <MenuRight>Home</MenuRight>
               <Button title="Entrar" onClick={handleClickLogin} />
-              <Button title="Cadastrar" onClick={handleClickSignup} />
+              <Button title="Cadastrar" onClick={handleClickRegister} />
             </>
           )}
         </Row>

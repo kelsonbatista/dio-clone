@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const InputContainer = styled.div`
   width: 100%;
-  max-width: 275px;
+  max-width: 340px;
   height: 30px;
   border-bottom: 1px solid #3b3450;
   display: flex;

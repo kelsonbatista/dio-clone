@@ -2,20 +2,19 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { MdEmail, MdLock } from "react-icons/md";
-import * as yup from "yup";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
 import Input from "../../components/Input";
+import loginSchema from "../../validations/loginSchema";
 import { Column, ForgotText, LoginContainer, RegisterText, Row, SubTitleLogin, Title, TitleLogin, Wrapper } from "./styles";
 
 function Login() {
-  const schema = yup.object().shape({
-    email: yup.string().email("Email inválido").required("Campo obrigatório"),
-    password: yup.string().min(5,"A senha deve ter pelo menos 5 caracteres").required("Campo obrigatório"),
-  }).required();
-  
-  const { control, handleSubmit, formState: { errors, isValid} } = useForm({
-    resolver: yupResolver(schema),
+  const {
+    control,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm({
+    resolver: yupResolver(loginSchema),
     mode: "onChange",
   });
 

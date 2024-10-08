@@ -84,3 +84,9 @@ export const Row = styled.div`
   align-items: center;
   margin-top: 20px;
 `;
+
+export const ErrorText = styled.p`
+  color: #f00;
+  font-size: 12px;
+  margin: 5px 0;
+`;

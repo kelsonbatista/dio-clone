@@ -47,7 +47,7 @@ export const Progress = styled.div`
     position: absolute;
     left: 0;
     top: 0;
-    width: ${(props) => props.percentual}%;
+    width: ${(props) => props.$percentual}%;
     height: 6px;
     background: #23DD7A;
     border-radius: 3px;

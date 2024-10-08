@@ -42,6 +42,6 @@ export const TextContent = styled.p`
 `;
 
 export const Column = styled.div`
-  flex:${(props) => props.flex};
+  flex:${(props) => props.$flex};
   padding-right: 24px;
 `;

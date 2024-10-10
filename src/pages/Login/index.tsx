@@ -1,19 +1,19 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { MdEmail, MdLock } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
 import Input from "../../components/Input";
-import { AuthContext } from "../../context/auth";
+import useAuth from "../../hooks/useAuth";
 import loginSchema from "../../schemas/loginSchema";
 import { Column, ErrorText, ForgotText, LoginContainer, RegisterText, Row, SubTitleLogin, Title, TitleLogin, Wrapper } from "./styles";
 import { IFormData } from "./types";
 
 function Login() {
   const [error, setError] = useState('');
-  const {handleLogin} = useContext(AuthContext);
+  const {handleLogin} = useAuth();
 
   const {
     control,

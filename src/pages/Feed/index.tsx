@@ -1,13 +1,12 @@
-import { useContext } from 'react';
 import avatar from '../../assets/images/avatar.png';
 import Card from '../../components/Card';
 import Header from '../../components/Header';
 import UserInfo from '../../components/UserInfo';
-import { AuthContext } from '../../context/auth';
+import useAuth from '../../hooks/useAuth';
 import { CenterPageContainer, Column, FeedContainer, Title, TitleHighlight } from './styles';
 
 function Feed() {
-  const {user} = useContext(AuthContext);
+  const {user} = useAuth();
 
   return (
     <>

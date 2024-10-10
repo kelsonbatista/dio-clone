@@ -1,14 +1,13 @@
-import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import avatar from '../../assets/images/avatar.png';
 import logo from '../../assets/images/logo-full.webp';
-import { AuthContext } from '../../context/auth';
+import useAuth from '../../hooks/useAuth';
 import Button from '../Button';
 import { UserPicture } from '../Card/styles';
 import { HeaderContainer, Input, Menu, MenuRight, Row, SearchContainer, TextDecorationNone, Wrapper } from './styles';
 
 function Header() {
-  const { user, handleSignOut } = useContext(AuthContext);
+  const { user, handleSignOut } = useAuth();
   
   const navigate = useNavigate();
 

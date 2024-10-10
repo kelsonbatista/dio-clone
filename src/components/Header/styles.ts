@@ -79,3 +79,8 @@ export const Input = styled.input`
   color: #fff;
   height: 30px;
 `;
+
+export const TextDecorationNone = styled.a`
+  text-decoration: none;
+  color: #fff;
+`;

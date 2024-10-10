@@ -48,7 +48,7 @@ function Register() {
 
   return (
     <>
-      <Header autenticado={false} />
+      <Header />
       <RegisterContainer>
         <Column>
           <Title>

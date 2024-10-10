@@ -46,3 +46,12 @@ export const Column = styled.div<IColumn>`
   flex:${(props) => props.$flex};
   padding-right: 24px;
 `;
+
+export const CenterPageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+  margin-top: -50px;
+`;

@@ -5,12 +5,10 @@ import logo from '../../assets/images/logo-full.webp';
 import { AuthContext } from '../../context/auth';
 import Button from '../Button';
 import { UserPicture } from '../Card/styles';
-import { HeaderContainer, Input, Menu, MenuRight, Row, SearchContainer, Wrapper } from './styles';
-import { IHeader } from './types';
+import { HeaderContainer, Input, Menu, MenuRight, Row, SearchContainer, TextDecorationNone, Wrapper } from './styles';
 
-function Header(props: IHeader) {
-  const { autenticado } = props;
-  const { user } = useContext(AuthContext);
+function Header() {
+  const { user, handleSignOut } = useContext(AuthContext);
   
   const navigate = useNavigate();
 
@@ -29,7 +27,7 @@ function Header(props: IHeader) {
           <Link to="/">
             <img src={logo} alt="Logo" />
           </Link>
-          {autenticado && (
+          {user.id && (
             <>
               <SearchContainer>
                 <Input placeholder="Search..." />
@@ -40,9 +38,11 @@ function Header(props: IHeader) {
           )}
         </Row>
         <Row>
-          {autenticado ? (
+          {user.id ? (
             <>
-              {user.name}&nbsp;&nbsp;<UserPicture src={avatar} />
+              {user.name}
+              <UserPicture src={avatar} />
+              <Link to="/" onClick={handleSignOut}><TextDecorationNone>Sair</TextDecorationNone></Link>
             </>
           ) : (
             <>

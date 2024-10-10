@@ -30,7 +30,7 @@ function Login() {
 
   return (
     <>
-      <Header autenticado={false} />
+      <Header />
       <LoginContainer>
         <Column>
           <Title>

@@ -1,48 +1,31 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { MdEmail, MdLock } from "react-icons/md";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
 import Input from "../../components/Input";
+import { AuthContext } from "../../context/auth";
 import loginSchema from "../../schemas/loginSchema";
-import { api } from "../../services/api";
 import { Column, ErrorText, ForgotText, LoginContainer, RegisterText, Row, SubTitleLogin, Title, TitleLogin, Wrapper } from "./styles";
 import { IFormData } from "./types";
 
 function Login() {
   const [error, setError] = useState('');
-  const navigate = useNavigate();
-
-  const handleClickLogin = () => {
-    navigate("/feed");
-  };
+  const {handleLogin} = useContext(AuthContext);
 
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<IFormData>({
     resolver: yupResolver(loginSchema),
     mode: "onChange",
   });
 
   const onSubmit = async (formData: IFormData) => {
-    try {
-      const response = await api.get(
-        `/users?email=${formData.email}&password=${formData.password}`
-      );
-
-      if (response.data.length > 0) {
-        handleClickLogin();
-        setError('');
-      } else {
-        setError("Email ou senha inválidos");
-      }
-    } catch (err: any) {
-      setError(err.message);
-    }
+    handleLogin(formData);
   };
 
   return (

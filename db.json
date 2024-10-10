@@ -29,6 +29,12 @@
       "name": "Juliana",
       "email": "ju@example.com",
       "password": "123456"
+    },
+    {
+      "id": "eea5",
+      "name": "teste",
+      "email": "teste@example.com",
+      "password": "123456"
     }
   ]
 }

@@ -1,6 +1,8 @@
+import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import avatar from '../../assets/images/avatar.png';
 import logo from '../../assets/images/logo-full.webp';
+import { AuthContext } from '../../context/auth';
 import Button from '../Button';
 import { UserPicture } from '../Card/styles';
 import { HeaderContainer, Input, Menu, MenuRight, Row, SearchContainer, Wrapper } from './styles';
@@ -8,6 +10,7 @@ import { IHeader } from './types';
 
 function Header(props: IHeader) {
   const { autenticado } = props;
+  const { user } = useContext(AuthContext);
   
   const navigate = useNavigate();
 
@@ -38,7 +41,9 @@ function Header(props: IHeader) {
         </Row>
         <Row>
           {autenticado ? (
-            <UserPicture src={avatar} />
+            <>
+              {user.name}&nbsp;&nbsp;<UserPicture src={avatar} />
+            </>
           ) : (
             <>
               <MenuRight>Home</MenuRight>

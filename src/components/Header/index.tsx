@@ -1,12 +1,12 @@
-import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import avatar from '../../assets/images/avatar.png';
 import logo from '../../assets/images/logo-full.webp';
 import Button from '../Button';
 import { UserPicture } from '../Card/styles';
 import { HeaderContainer, Input, Menu, MenuRight, Row, SearchContainer, Wrapper } from './styles';
+import { IHeader } from './types';
 
-function Header(props) {
+function Header(props: IHeader) {
   const { autenticado } = props;
   
   const navigate = useNavigate();

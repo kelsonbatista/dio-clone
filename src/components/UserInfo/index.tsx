@@ -1,7 +1,7 @@
-import React from 'react';
 import { NameText, Progress, UserInfoContainer, UserPicture } from './styles';
+import { IUserInfo } from './types';
 
-function UserInfo(props) {
+function UserInfo(props: IUserInfo) {
   const { nome, imagem, $percentual } = props;
 
   return (

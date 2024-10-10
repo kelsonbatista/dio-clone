@@ -1,17 +1,18 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { MdEmail, MdLock, MdPerson } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
 import Input from "../../components/Input";
+import registerSchema from "../../schemas/registerSchema";
 import { api } from "../../services/api";
-import registerSchema from "../../validations/registerSchema";
 import { Column, ErrorText, ForgotText, RegisterContainer, RegisterText, Row, SubTitleRegister, Title, TitleRegister, Wrapper } from "./styles";
+import { IFormData } from "./types";
 
 function Register() {
-  const [error, setError] = useState(null);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleClickRegister = () => {
@@ -22,12 +23,12 @@ function Register() {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<IFormData>({
     resolver: yupResolver(registerSchema),
     mode: "onChange",
   });
 
-  const onSubmit = async (formData) => {
+  const onSubmit = async (formData: IFormData) => {
     try {
       const response = await api.get(
         `/users?email=${formData.email}`
@@ -36,18 +37,18 @@ function Register() {
       if (response.data.length === 0) {
         await api.post("/users", formData);
         handleClickRegister();
-        setError(null);
+        setError('');
       } else {
         setError("Esse usuário já existe. Faça login ou clique em 'esqueci minha senha'");
       }
-    } catch (err) {
+    } catch (err: any) {
       setError(err.message);
     }
   };
 
   return (
     <>
-      <Header />
+      <Header autenticado={false} />
       <RegisterContainer>
         <Column>
           <Title>

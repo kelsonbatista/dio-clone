@@ -1,17 +1,18 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { MdEmail, MdLock } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
 import Input from "../../components/Input";
+import loginSchema from "../../schemas/loginSchema";
 import { api } from "../../services/api";
-import loginSchema from "../../validations/loginSchema";
 import { Column, ErrorText, ForgotText, LoginContainer, RegisterText, Row, SubTitleLogin, Title, TitleLogin, Wrapper } from "./styles";
+import { IFormData } from "./types";
 
 function Login() {
-  const [error, setError] = useState(null);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleClickLogin = () => {
@@ -27,7 +28,7 @@ function Login() {
     mode: "onChange",
   });
 
-  const onSubmit = async (formData) => {
+  const onSubmit = async (formData: IFormData) => {
     try {
       const response = await api.get(
         `/users?email=${formData.email}&password=${formData.password}`
@@ -35,18 +36,18 @@ function Login() {
 
       if (response.data.length > 0) {
         handleClickLogin();
-        setError(null);
+        setError('');
       } else {
         setError("Email ou senha inválidos");
       }
-    } catch (err) {
+    } catch (err: any) {
       setError(err.message);
     }
   };
 
   return (
     <>
-      <Header />
+      <Header autenticado={false} />
       <LoginContainer>
         <Column>
           <Title>

@@ -1,8 +1,8 @@
-import React from 'react';
 import { Controller } from 'react-hook-form';
 import { ErrorText, IconContainer, InputContainer, InputText } from './styles';
+import { IInput } from './types';
 
-function Input(props) {
+function Input(props: IInput) {
   const { leftIcon, name, control, errorMessage, ...rest } = props;
 
   return (

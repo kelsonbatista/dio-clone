@@ -1,8 +1,8 @@
-import React from 'react';
 import { ButtonContainer } from './styles';
+import IButton from './types';
 
-function Button(props) {
-  const { title, $variant="primary", onClick } = props
+function Button(props: IButton) {
+  const { title, $variant="primary", onClick } = props;
 
   return (
     <ButtonContainer $variant={$variant} onClick={onClick}>

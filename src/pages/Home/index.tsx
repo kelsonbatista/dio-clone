@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import banner from '../../assets/images/banner3.webp';
 import Button from '../../components/Button';
@@ -15,7 +14,7 @@ function Home() {
 
   return (
     <>
-      <Header />
+      <Header autenticado={false} />
       <HomeContainer>
         <div>
           <Title>
@@ -29,7 +28,7 @@ function Home() {
           </TextContent>
           <Button
             title="Começar agora"
-            variant="primary"
+            $variant="primary"
             onClick={handleClickLogin}
           />
         </div>

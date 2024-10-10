@@ -1,4 +1,3 @@
-import React from 'react';
 import { FiThumbsUp } from 'react-icons/fi';
 import avatar from '../../assets/images/avatar.png';
 import fundo1 from '../../assets/images/fundo1.jpg';

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IColumn } from "./types";
 
 export const FeedContainer = styled.main`
   width: 100%;
@@ -41,7 +42,7 @@ export const TextContent = styled.p`
   color: #d9d9d9;
 `;
 
-export const Column = styled.div`
+export const Column = styled.div<IColumn>`
   flex:${(props) => props.$flex};
   padding-right: 24px;
 `;
